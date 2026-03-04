@@ -7,7 +7,7 @@ function hexdecimal(W) {
 }
 function decodeIntToString(data) {
   // modern implementation to make things easier to comprehend  
-  /* 
+  
   let res = "";
   for (const num of data) {
     const byte = (num >> 24) & 0xFF;
@@ -20,9 +20,9 @@ function decodeIntToString(data) {
     res += String.fromCharCode(charCode, charCode1);
   }
   return res;
-  */
 
 
+  /*
   return data.reduce((C, q) => {
     let p;
     const g = q & 255;
@@ -37,6 +37,7 @@ function decodeIntToString(data) {
     var h = unescape(p);
     return C + h;
   }, "");
+  */
 }
 function fqMaGkNg() {
   // what the literal fuck is this key
